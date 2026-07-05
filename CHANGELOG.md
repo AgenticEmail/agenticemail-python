@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- README: link the CLI and TypeScript SDK. No code changes.
+
 ## 0.1.0
 
 Initial public release.
