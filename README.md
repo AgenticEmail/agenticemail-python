@@ -95,6 +95,12 @@ Python 3.9+. Fully type-annotated (`py.typed`).
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md). This repo is an exported snapshot of the SDK developed in the AgenticEmail monorepo.
 
+## Related
+
+- [CLI](https://github.com/AgenticEmail/agenticemail-cli): the same API as JSON-first shell commands — `npm install -g agenticemail-cli`, including `wait-for-message` for agent loops
+- [TypeScript SDK](https://github.com/AgenticEmail/agenticemail-typescript): `npm install agenticemail`
+- [Docs](https://agenticemail.dev/docs): guides, CLI, MCP server, and the interactive API reference
+
 ## License
 
 [Apache-2.0](./LICENSE)
