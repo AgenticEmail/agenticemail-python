@@ -34,7 +34,7 @@ def _enc(inbox_id: str) -> str:
 
 
 class AgenticEmail:
-    def __init__(self, api_key: str, base_url: str = "https://app.agenticemail.dev"):
+    def __init__(self, api_key: str, base_url: str = "https://api.agenticemail.dev"):
         self._api_key = api_key
         self._base_url = base_url.rstrip("/")
         self._http = httpx.Client(
