@@ -362,7 +362,11 @@ def verify_webhook(body: str, headers: dict, secret: str) -> dict:
     if not wid or not ts or not sig_header:
         raise AgenticEmailError(400, "invalid_signature", "Missing webhook signature headers")
 
-    key = base64.b64decode(secret[6:] if secret.startswith("whsec_") else secret)
+    # Secrets are base64url and unpadded (whsec_ + 24 random bytes); accept
+    # both alphabets like the server's Node decoder does.
+    key_b64 = secret[6:] if secret.startswith("whsec_") else secret
+    key_b64 = key_b64.replace("-", "+").replace("_", "/")
+    key = base64.b64decode(key_b64 + "=" * (-len(key_b64) % 4))
     expected = base64.b64encode(
         hmac.new(key, f"{wid}.{ts}.{body}".encode(), hashlib.sha256).digest()
     ).decode()
