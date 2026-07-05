@@ -6,8 +6,6 @@ The official Python library for the [AgenticEmail](https://agenticemail.dev) API
 
 ```bash
 pip install agenticemail
-# publishing to PyPI is in progress — until then, install from GitHub:
-pip install git+https://github.com/AgenticEmail/agenticemail-python.git
 ```
 
 Optional extras: `agenticemail[events]` (WebSocket event stream), `agenticemail[langchain]` (LangChain toolkit).
